@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+ 
+#define pb push_back
+#define s second 
+#define f first
+ 
+typedef long long ll;
+using namespace std;
+ 
+int main(){
+	ll n, l, r;
+	cin>>n>>l>>r;
+	//cout<<n<<" ";
+	
+	ll ans=0;
+	for(int i=1; i<=n; i++){
+		if(i>l){
+			ans+=1;
+		}
+		else{
+			ans+=pow(2, i-1);
+		}
+	}
+	cout<<ans<<" ";
+	ans=0;
+	for(int i=1; i<=n; i++){
+		if(i>r){
+			ans+=pow(2, r-1);
+		}
+		else{
+			ans+=pow(2, i-1);
+		}
+	}
+	cout<<ans;
+	return 0;
+}
